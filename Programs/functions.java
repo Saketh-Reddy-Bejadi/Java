@@ -1,9 +1,15 @@
 public class functions {
-        int pattern(){
-        return 2+3;
-    }
-    public static void main(String[] args) {
+    /*public static void print() {
+        System.out.println("Hello");
+        System.out.println("Hello");
+        System.out.println("Hello");
         System.out.println("Hello");
     }
+    public static void main(String[] args) {
+        print();
+    }*/
+
+
+    
 
 }
