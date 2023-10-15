@@ -1,0 +1,70 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Overloading_Demo",
+            "request": "launch",
+            "mainClass": "Overloading_Demo",
+            "projectName": "java_97baa0dc"
+        },
+        {
+            "type": "java",
+            "name": "Aquestion",
+            "request": "launch",
+            "mainClass": "codeVita.Aquestion",
+            "projectName": "java_97baa0dc"
+        },
+        {
+            "type": "java",
+            "name": "Gpt",
+            "request": "launch",
+            "mainClass": "codeVita.Gpt",
+            "projectName": "java_97baa0dc"
+        },
+        {
+            "type": "java",
+            "name": "QuestionA",
+            "request": "launch",
+            "mainClass": "codeVita.QuestionA",
+            "projectName": "java_97baa0dc"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "JavaBasics",
+            "request": "launch",
+            "mainClass": "JavaBasics",
+            "projectName": "java_97baa0dc"
+        },
+        {
+            "type": "java",
+            "name": "QuadraticRoots",
+            "request": "launch",
+            "mainClass": "QuadraticRoots",
+            "projectName": "java_97baa0dc"
+        },
+        {
+            "type": "java",
+            "name": "patterns",
+            "request": "launch",
+            "mainClass": "patterns",
+            "projectName": "java_97baa0dc"
+        },
+        {
+            "type": "java",
+            "name": "sample",
+            "request": "launch",
+            "mainClass": "sample",
+            "projectName": "java_97baa0dc"
+        }
+    ]
+}
