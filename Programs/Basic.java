@@ -20,8 +20,20 @@ public class Basic {
         // System.out.println("String Line:"+d);
 
 
-        char e=sc.next().charAt(0);
-        System.out.println(e);
+        // char e=sc.next().charAt(0);
+        // System.out.println(e);
+
+        byte b=120;
+        char c='A';
+        short s=120;
+        int i=25000;
+        float f=23.4f;
+        double d=2333.44252529;
+        double res=(b-c)+(i-s)+(d-f);
+        System.out.println(res);
+        System.out.println((float)res);
+        System.out.println((int)(res));
+
 
 
         sc.close();

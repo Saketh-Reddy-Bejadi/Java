@@ -5,7 +5,7 @@ public class Celsius2Fahrenheit {
         Scanner sc =new Scanner(System.in);
         System.out.print("Enter Temperature(Celsius):");
         float Celsius=sc.nextFloat();
-        float Fahrenheit=(Celsius * 9/5) + 32;
+        float Fahrenheit=Celsius * 9/5 + 32;
         System.out.println(Fahrenheit);
 
 
