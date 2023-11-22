@@ -3,21 +3,18 @@ class Animal {
         System.out.println("Animal makes a sound");
     }
 }
-
 class Dog extends Animal {
     @Override
     void sound() {
         System.out.println("Dog barks");
     }
 }
-
 class Cat extends Animal {
     @Override
     void sound() {
         System.out.println("Cat meows");
     }
 }
-
 public class DynamicBinding {
     public static void main(String[] args) {
 
