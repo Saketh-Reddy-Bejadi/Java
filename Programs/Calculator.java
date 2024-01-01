@@ -41,4 +41,7 @@ public class Calculator {
         }
         sc.close();
     }
+
+    public void setVisible(boolean b) {
+    }
 }

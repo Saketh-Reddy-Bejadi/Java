@@ -3,7 +3,6 @@ import javax.swing.border.BevelBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
-
 class Calculator {
 	JFrame frmCalculator;
 	String result="",expression="";
@@ -59,7 +58,6 @@ class Calculator {
 			if(!y.equals("(") && !y.equals(")")) {
 				p+=y+",";}}
 		return p;}
-	//factorial method
 	private double factorial(double y) {
 		double fact=1;
 		if(y==0 || y==1) {
@@ -68,7 +66,6 @@ class Calculator {
 			for(int i=2; i<=y; i++) {
 				fact*=i;}}
 		return fact;}
-	//for actual calculation with binary operators
 	private double calculate(double x,double y,String c){
 		double res=0;
 		switch(c){
@@ -76,7 +73,6 @@ class Calculator {
 			case "x":res= x*y;break;case "/":res= x/y;break;
 			case "^":res= Math.pow(x,y);break;default :res= 0;}
 		return res;}
-	//calculation with unary operators
 	private double calculate(double y,String c) {
 		double res=0;
 		switch(c) {
@@ -93,18 +89,16 @@ class Calculator {
 		ArrayList<String> token2=new ArrayList<String>();
 		for(int i=0; i<tokens.length; i++) {
 			if(! tokens[i].equals("") && ! tokens[i].equals(" ") && ! tokens[i].equals("\n") && ! tokens[i].equals("  ")) {
-				token2.add(tokens[i]);  // tokens from post fix form p actual tokens for calculation
+				token2.add(tokens[i]);
 			}}		
 		Stack<Double> s=new Stack<Double>();
 		double x,y;
 		for(String  i:token2) {
 			if(isoperator(i)){
-				//if it is unary operator or function
 				if(i.equals("sin") ||i.equals("cos") ||i.equals("tan") ||i.equals("log") || i.equals("ln") || i.equals("sqrt") || i.equals("!")) {
 					y=s.pop();
 					s.push(calculate(y,i));
 				}else {
-					//for binary operators
 					y=s.pop();x=s.pop();
 					s.push(calculate(x,y,i));}
 			}else{
@@ -118,7 +112,6 @@ class Calculator {
 		while(!s.empty()) {
 			res*=s.pop();}
 		return res;}
-	//actual combined method for calculation 
 	private void calculateMain() {
 		String tokens[]=expression.split(",");
 		for(int i=0; i<tokens.length; i++) {
@@ -128,7 +121,6 @@ class Calculator {
 			double res = Eval(infixTopostfix());
 			result= Double.toString(res);
 		}catch(Exception e) {}}
-	//design of the frame with their action listner
 	private void initialize() {
 		frmCalculator = new JFrame();
 		frmCalculator.setResizable(false);
@@ -166,7 +158,6 @@ class Calculator {
 		butttonPanel.setBounds(34, 120, 316, 322);
 		frmCalculator.getContentPane().add(butttonPanel);
 		butttonPanel.setLayout(new GridLayout(0, 5, 0, 0));
-		//clear button 
 		JButton button1 = new JButton("C");
 		button1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -176,8 +167,6 @@ class Calculator {
 				num=false;dot=false;}});
 		button1.setFont(new Font("Calibri Light", Font.PLAIN, 17));
 		butttonPanel.add(button1);
-		
-		//delete button
 		JButton button2 = new JButton("DEL");
 		button2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -196,7 +185,6 @@ class Calculator {
 					expression="";}}});
 		button2.setFont(new Font("Calibri Light", Font.PLAIN, 14));
 		butttonPanel.add(button2);
-		//button for constant pi
 		JButton button3 = new JButton("<html><body><span>π</span></body></html>");
 		button3.setFont(new Font("Calibri Light", Font.PLAIN, 17));
 		button3.addActionListener(new ActionListener() {
@@ -208,7 +196,6 @@ class Calculator {
 				expression += ",pi";
 				num=false;dot=false;}});
 		butttonPanel.add(button3);
-		//button for x^Y
 		JButton button4 = new JButton("<html><body><span>X<sup>y</sup></span></body></html>");
 		button4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -221,7 +208,6 @@ class Calculator {
 				num=false;dot=false;}});
 		button4.setFont(new Font("Calibri Light", Font.PLAIN, 17));
 		butttonPanel.add(button4);
-		//factorial button
 		JButton buttton5 = new JButton("x!");
 		buttton5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -234,7 +220,6 @@ class Calculator {
 				num=false;dot=false;}});
 		buttton5.setFont(new Font("Calibri Light", Font.PLAIN, 17));
 		butttonPanel.add(buttton5);
-		//button for sin
 		JButton button6 = new JButton("sin");
 		button6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -283,7 +268,6 @@ class Calculator {
 				num=false;dot=false;}});
 		button9.setFont(new Font("Calibri Light", Font.PLAIN, 17));
 		butttonPanel.add(button9);
-		//button for squre root
 		JButton button10 = new JButton("<html><body><span>√</span></body></html>");
 		button10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -353,7 +337,6 @@ class Calculator {
 		button14.setBackground(new Color(220, 220, 220));
 		button14.setFont(new Font("Calibri Light", Font.PLAIN, 17));
 		butttonPanel.add(button14);
-		//button for division operator
 		JButton button15 = new JButton("<html><body><span>÷</span></body></html>");
 		button15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -433,7 +416,6 @@ class Calculator {
 		JButton button20 = new JButton("x");
 		button20.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
 				String s=textField.getText();
 				if(s.equals("0")) {
 					expression+="0";}
@@ -570,7 +552,6 @@ class Calculator {
 		button28.setBackground(new Color(220, 220, 220));
 		button28.setFont(new Font("Calibri Light", Font.PLAIN, 17));
 		butttonPanel.add(button28);
-		//actual functioning on clicking = button
 		JButton button29 = new JButton("=");
 		button29.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	
@@ -594,7 +575,6 @@ class Calculator {
 		button29.setBackground(Color.ORANGE);
 		button29.setFont(new Font("Calibri Light", Font.PLAIN, 22));
 		butttonPanel.add(button29);
-		
 		JButton button30 = new JButton("+");
 		button30.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
