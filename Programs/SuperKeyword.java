@@ -13,7 +13,7 @@ class Child extends Parent{
 
 public class SuperKeyword {
     public static void main(String[] args) {
-        Child c=new Child();
+        // Child c=new Child();
 
     }
 }
