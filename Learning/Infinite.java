@@ -34,5 +34,7 @@ public class Infinite {
                 }
             }
         }
+
+        i.close();
     }
 }
