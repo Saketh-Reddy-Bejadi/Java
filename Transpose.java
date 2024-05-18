@@ -9,17 +9,16 @@ public class Transpose {
             {4,5,6},
             {7,8,9},
         };
+        int[][] res=new int[matrix[0].length][matrix.length];
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = i; j < matrix[i].length; j++) {
-                int t=matrix[i][j];
-                matrix[i][j]=matrix[j][i];
-                matrix[j][i]=t;
+            for (int j = 0; j < matrix[i].length; j++) {
+                res[j][i]=matrix[i][j];
                 
             }
         }
-        for (int[] is : matrix) {
+        for (int[] s : res) {
             
-            System.out.println(Arrays.toString(is));
+            System.out.println(Arrays.toString(s));
         }
     }
 }
