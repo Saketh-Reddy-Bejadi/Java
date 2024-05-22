@@ -8,27 +8,22 @@ public class SpecialPositions {
             // {0,0,0,1,1}
             {1,0,0},{0,1,0},{0,0,1}
         };
-        System.out.println(special(mat));
-    }
-    static int special(int[][] mat){
         int c=0;
+        int[] rsum=new int[mat.length];
+        int[] csum=new int[mat[0].length];
         for (int i = 0; i < mat.length; i++) {
-            for (int j = 0; j < mat.length; j++) {
-                if(mat[i][j]==1){
-                    if(valid(mat,i,j)){
-                        c+=1;
-                    }
+            for (int j = 0; j < mat[0].length; j++) {
+                rsum[i]+=mat[i][j];
+                csum[j]+=mat[i][j];
+            }
+        }
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                if (mat[i][j]==1 && rsum[i]==1 && csum[j]==1){
+                    c++;
                 }
             }
         }
-        return c;
-    }
-    static boolean valid(int[][] mat,int i,int j){
-        for (int j2 = 0; j2 < mat.length; j2++) {
-            if(mat[i][j2]!=0 && mat[j2][j]!=0){
-                return false;
-            }
-        }
-        return true;
+        System.out.println(c);
     }
 }
