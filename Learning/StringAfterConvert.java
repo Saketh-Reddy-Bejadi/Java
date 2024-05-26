@@ -21,5 +21,7 @@ public class StringAfterConvert {
         }
         System.out.println(r);
         1945
+        2520
+        2457
     }
 }
