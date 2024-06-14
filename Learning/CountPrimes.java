@@ -1,14 +1,19 @@
+import java.util.ArrayList;
+
 public class CountPrimes {
     public static void main(String[] args) {
         int n=10,c=0;
+        ArrayList<Integer> list=new ArrayList<Integer>();
         for (int i = 2; i < n; i++) {
-            if(n==2 || n==3){
+            if(i==2 || i==3){
                 c++;
             }
             else if(isprime(i)){
+                list.add(i);
                 c++;
             }
         }
+        System.out.println(list);
         System.out.println(c);
     }
     static boolean isprime(int n){
@@ -21,5 +26,6 @@ public class CountPrimes {
             }
         }
         return true;
+
     }
 }
