@@ -1,10 +1,9 @@
 import java.util.Arrays;
-import java.util.Collections;
 
 public class KthLargestElement {
     public static void main(String[] args) {
         int[] nums={3,2,3,1,2,4,5,5,6};
-        int k =4;
+        int k =2;
         System.out.println(kLargest(nums,k));
     }
     static int kLargest(int[] nums, int k){
