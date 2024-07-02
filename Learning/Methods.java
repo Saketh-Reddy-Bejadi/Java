@@ -5,7 +5,7 @@ public interface Methods {
 
         // sum();
 
-        // int ans=sum2();
+        // int ans=sum2();  
         // System.out.println("int: "+ans);
 
         // sum3(23, 32);
