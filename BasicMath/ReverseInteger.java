@@ -3,21 +3,23 @@ package BasicMath;
 import java.util.Scanner;
 
 public class ReverseInteger {
-    static int Valid(int N){
+    static int Valid(int x){
+        int sign = x<0 ? -1 : 1;
+        x=Math.abs(x);
         int res=0;
-        while(N>0){
-            int d=N%10;
+        while(x>0){
+            int d=x%10;
             res=(res*10)+d;
-            N/=10;
+            x/=10;
 
         }
 
-        return res;
+        return res*sign;
     }
 public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        int N=sc.nextInt();
-        System.out.println(Valid(N));
+        int x=sc.nextInt();
+        System.out.println(Valid(x));
         sc.close();
     }
 }
